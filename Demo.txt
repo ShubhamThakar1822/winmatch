@@ -1,0 +1,63 @@
+npm init
+npm install express 
+
+in app.js for hello word
+var express = require ("express");
+var app = express ();
+app.get("/",function (req,resp){
+resp.send("Hello World");
+})
+app.listen (3000);
+console.log("server is ON");
+
+
+for HTML file
+var express = require ("express");
+var app =express ();
+app.get("/",function(req,resp){
+    resp.sendFile("index.html",{root:__dirname});
+})
+app.listen(3535);
+console.log("Server is running......");
+
+and create index.html file for code
+
+
+
+in .gitignore file---- node_modules/
+
+in Dockerfile ---- 
+FROM node:5
+WORKDIR /app
+COPY package.json /app
+RUN npm install
+COPY . /app
+CMD node server.js
+EXPOSE 3535
+
+upload to git repository
+code copy
+
+in aws--ec2--launch instance--create key--http--launch--coonect--connect
+
+sudo yum update
+sudo yum install git ----enter key---y
+git -v
+git clone paste git path
+ls
+cd demo3(file name)
+ls
+sudo yum install docker----y
+sudo systemctl start docker
+sudo systemctl enable docker
+sudo systemctl status docker
+sudo docker build -t demo3 .
+sudo docker run -d -p 3535:3535 demo3
+
+instance--security---edit---http--all traffic
+                            custom--IPv4
+save
+public id paste:3535
+
+
+
